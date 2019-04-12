@@ -1,0 +1,94 @@
+{
+  "appId": "com.13banda.ZapExtreme",
+  "artifactName": "${productName}-v${version}-${os}-${arch}.${ext}",
+  "detectUpdateChannel": true,
+  "copyright": "NO Copyright © 2019 ${author} ",
+  "generateUpdatesFilesForAllChannels": true,
+  "asar": true,
+  "extends": null,
+  "files": [
+    "src/main/**/*",
+    "build/**/*",
+    ".env",
+    "package.json"
+  ],
+  "directories": {
+    "buildResources": "assets",
+    "output": "dist"
+  },
+  "mac": {
+    "category": "public.app-category.productivity",
+    "icon": "assets/icon.icns",
+    "darkModeSupport": false,
+    "helperBundleId": "${appBundleIdentifier}.helper",
+    "type": "distribution"
+  },
+  "dmg": {
+    "icon": "assets/icon.icns",
+    "iconSize": 100,
+    "contents": [
+      {
+        "x": 380,
+        "y": 280,
+        "type": "link",
+        "path": "/Applications"
+      },
+      {
+        "x": 110,
+        "y": 280,
+        "type": "file"
+      }
+    ],
+    "window": {
+      "width": 500,
+      "height": 500
+    }
+  },
+  "linux": {
+    "executableName": "ZapExtreme",
+    "icon": "icon.png",
+    "synopsis": "WhatsApp Bulk Messaging",
+    "description": "ZapExtreme for Linux",
+    "category": "Utility",
+    "maintainer": "13abnda <wwaheguru9509088985@gmail.com>",
+    "desktop": "linux.desktop",
+    "target": [
+      "AppImage",
+      "deb"
+      ]
+  },
+  "deb": {
+    "synopsis": "WhatsApp Bulk Messaging"
+  },
+  "snap": {
+    "synopsis": "WhatsApp Bulk Messaging"
+  },
+  "win": {
+    "icon": "assets/icon.ico",
+    "publisherName": "@13banda",
+    "legalTrademarks": "Copyright © 2019",
+    "target": [
+     {
+        "target":"nsis",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
+    ]
+  },
+  "nsis": {
+    "createDesktopShortcut": "always",
+    "installerIcon": "assets/icon.ico",
+    "uninstallerIcon": "assets/icon.ico"
+  },
+  "publish":[
+    {
+      "provider": "bintray",
+      "package": "test",
+      "repo" : "custom",
+      "owner": "malka13banda",
+      "publishAutoUpdate": true
+    }
+  ]
+}
